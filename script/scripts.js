@@ -42,7 +42,7 @@ function showBeerDetail(index) {
 
   // 画像の相対パス（例: data/01_PERMIT.png）
   const imagePath = `data/${currentBeer.image}`;
-  detail.innerHTML = `
+  detailContainer.innerHTML = `
     <img src="${imagePath}" alt="${currentBeer.name}" class="beer-image">
     <h2>${currentBeer.name}</h2>
     <p><b>Style:</b> ${currentBeer.style}</p>
