@@ -38,7 +38,7 @@ function showBeerDetail(index) {
   const description = currentBeer.description.replace(/\n/g, "<br>");
   const detail = currentBeer.detail.replace(/\n/g, "<br>");
 
-  const detail = document.getElementById("beer-detail");
+  const detailContainer  = document.getElementById("beer-detail");
 
   // 画像の相対パス（例: data/01_PERMIT.png）
   const imagePath = `data/${currentBeer.image}`;
