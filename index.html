@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passific Brewing コレクション</title>
+  <link rel="stylesheet" href="style/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Passific Brewing</h1>
+    <nav>
+      <button onclick="showSection('list')">ビール一覧</button>
+      <button onclick="showSection('detail')">詳細</button>
+      <button onclick="showSection('stats')">統計</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 一覧 -->
+    <section id="list-section" class="section active">
+      <h2>ビール一覧</h2>
+      <div id="beer-list"></div>
+    </section>
+
+    <!-- 詳細 -->
+    <section id="detail-section" class="section">
+      <button class="back-btn" onclick="showSection('list')">← 戻る</button>
+      <div id="beer-detail"></div>
+    </section>
+
+    <!-- 統計 -->
+    <section id="stats-section" class="section">
+      <h2>統計</h2>
+      <canvas id="abvChart"></canvas>
+      <canvas id="styleChart"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Passific Brewing</p>
+  </footer>
+
+  <script src="script/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+header {
+  background: #004d40;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav button {
+  background: #00796b;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+nav button:hover {
+  background: #009688;
+}
+
+.section {
+  display: none;
+  padding: 1rem;
+}
+.section.active {
+  display: block;
+}
+
+#beer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.beer-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.beer-card:hover {
+  transform: scale(1.03);
+}
+
+#beer-detail {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  margin-bottom: 1rem;
+  background: #ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.back-btn:hover {
+  background: #bbb;
+}
+
+canvas {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: block;
+}

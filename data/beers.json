@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Permit",
+    "style": "Pale Ale",
+    "abv": 5.0,
+    "release": "2021-10-05",
+    "description": "穏やかな柑橘感と花のような香り、バランス感のある苦味。何杯でも飲みたくなるような仕上がり。",
+    "story": "アメリカのJohn Muir Trailを歩いた経験をもとに、Permit（許可）を得て始まったブルワリーの象徴的なビール。"
+  },
+  {
+    "name": "Ultra Light",
+    "style": "Session Ale",
+    "abv": 2.8,
+    "release": "2021-10-12",
+    "description": "低アルコールながら軽いだけでなく、グレープフルーツやミントのような香りでリフレッシング。",
+    "story": "Ultralight Hikingのカルチャーにインスパイアされた、軽さと持続性をテーマにしたビール。"
+  },
+  {
+    "name": "Passific IPA",
+    "style": "IPA",
+    "abv": 6.0,
+    "release": "2021-10-19",
+    "description": "柑橘の果汁感と心地よい苦味が特徴のジューシーなIPA。",
+    "story": "クラフトビールの原点とも言えるIPAへの情熱が詰まったフラッグシップビール。"
+  }
+]
