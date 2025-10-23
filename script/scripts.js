@@ -33,6 +33,7 @@ function renderBeerList() {
 }
 
 function showBeerDetail(index) {
+  console.log("showBeerDetail called", index); // ← 追加
   currentBeer = beers[index];
   // 改行コードをHTML改行に変換
   const description = currentBeer.description.replace(/\n/g, "<br>");
