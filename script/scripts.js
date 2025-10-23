@@ -34,16 +34,24 @@ function renderBeerList() {
 
 function showBeerDetail(index) {
   currentBeer = beers[index];
+  // 改行コードをHTML改行に変換
+  const description = currentBeer.description.replace(/\n/g, "<br>");
+  const detail = currentBeer.detail.replace(/\n/g, "<br>");
+
   const detail = document.getElementById("beer-detail");
+
+  // 画像の相対パス（例: data/01_PERMIT.png）
+  const imagePath = `data/${currentBeer.image}`;
   detail.innerHTML = `
+    <img src="${imagePath}" alt="${currentBeer.name}" class="beer-image">
     <h2>${currentBeer.name}</h2>
     <p><b>Style:</b> ${currentBeer.style}</p>
     <p><b>ABV:</b> ${currentBeer.abv}%</p>
-    <p><b>Release:</b> ${currentBeer.release}</p>
+    <p><b>リリース日:</b> ${currentBeer.release}</p>
     <h4>説明</h4>
     <p>${currentBeer.description}</p>
-    <h4>ストーリー</h4>
-    <p>${currentBeer.story}</p>
+    <h4>詳細</h4>
+    <p>${currentBeer.detail}</p>
   `;
   showSection("detail");
 }
