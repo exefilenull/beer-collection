@@ -56,6 +56,10 @@ nav button:hover {
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
 /* ビール詳細の画像 */
@@ -64,6 +68,13 @@ nav button:hover {
   max-width: 100%;      /* 親要素の幅に収まる */
   height: auto;         /* 縦横比を維持 */
   margin-bottom: 1em;   /* 下に余白 */
+}
+
+@media (max-width: 600px) {
+  .beer-image {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .back-btn {
