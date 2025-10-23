@@ -58,6 +58,14 @@ nav button:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* ビール詳細の画像 */
+.beer-image {
+  display: block;       /* ブロック表示にして下に余白を作る */
+  max-width: 100%;      /* 親要素の幅に収まる */
+  height: auto;         /* 縦横比を維持 */
+  margin-bottom: 1em;   /* 下に余白 */
+}
+
 .back-btn {
   margin-bottom: 1rem;
   background: #ccc;
