@@ -97,4 +97,34 @@ function renderCharts() {
       }]
     }
   });
+
+   // スタイルごとの平均ABVグラフ
+  const styleABV = {};
+  beers.forEach(b => {
+    if (!styleABV[b.style]) styleABV[b.style] = { total: 0, count: 0 };
+    styleABV[b.style].total += b.abv;
+    styleABV[b.style].count += 1;
+  });
+
+  const styleLabels = Object.keys(styleABV);
+  const avgABV = styleLabels.map(style => 
+    (styleABV[style].total / styleABV[style].count).toFixed(2)
+  );
+
+  const avgCtx = document.getElementById("avgAbvChart").getContext("2d");
+  new Chart(avgCtx, {
+    type: "bar",
+    data: {
+      labels: styleLabels,
+      datasets: [{
+        label: "平均ABV (%)",
+        data: avgABV,
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true, max: Math.max(...avgABV) + 1 }
+      }
+    }
+  });
 }
