@@ -111,6 +111,8 @@ function renderCharts() {
     (styleABV[style].total / styleABV[style].count).toFixed(2)
   );
 
+   console.log("平均ABVデータ:", avgAbvLabels, avgAbvData);
+
   const avgCtx = document.getElementById("avgAbvChart").getContext("2d");
   new Chart(avgCtx, {
     type: "bar",
