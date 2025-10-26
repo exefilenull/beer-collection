@@ -1,5 +1,6 @@
 let beers = [];
 let currentBeer = null;
+let scrollPosition = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/beers.json")
@@ -14,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function showSection(section) {
   document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
   document.getElementById(section + "-section").classList.add("active");
+
+  if (section == "list") {
+    window.scrollTo({ top: scrollPosition, behavior: "instant"});
+  }
 }
 
 function renderBeerList() {
@@ -22,6 +27,11 @@ function renderBeerList() {
   beers.forEach((beer, index) => {
     const card = document.createElement("div");
     card.className = "beer-card";
+
+    if (beer.color) {
+      card.style.backgroundColor = beer.color;
+    }
+
     card.innerHTML = `
       <h3>${beer.name}</h3>
       <p><b>Style:</b> ${beer.style}</p>
@@ -34,6 +44,8 @@ function renderBeerList() {
 
 function showBeerDetail(index) {
   console.log("showBeerDetail called", index); // ← 追加
+  scrollPosition = window.scrollY;
+  
   currentBeer = beers[index];
   // 改行コードをHTML改行に変換
   const description = currentBeer.description.replace(/\n/g, "<br>");
