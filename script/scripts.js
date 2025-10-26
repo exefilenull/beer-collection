@@ -98,7 +98,7 @@ function renderCharts() {
     }
   });
 
-   // スタイルごとの平均ABVグラフ
+  // スタイルごとの平均ABVグラフ
   const styleABV = {};
   beers.forEach(b => {
     if (!styleABV[b.style]) styleABV[b.style] = { total: 0, count: 0 };
@@ -107,11 +107,12 @@ function renderCharts() {
   });
 
   const styleLabels = Object.keys(styleABV);
-  const avgABV = styleLabels.map(style => 
+  const avgABV = styleLabels.map(style =>
     (styleABV[style].total / styleABV[style].count).toFixed(2)
   );
 
-   console.log("平均ABVデータ:", avgAbvLabels, avgAbvData);
+  // ✅ 修正済みログ出力
+  console.log("平均ABVデータ:", styleLabels, avgABV);
 
   const avgCtx = document.getElementById("avgAbvChart").getContext("2d");
   new Chart(avgCtx, {
@@ -125,7 +126,7 @@ function renderCharts() {
     },
     options: {
       scales: {
-        y: { beginAtZero: true, max: Math.max(...avgABV) + 1 }
+        y: { beginAtZero: true, max: Math.max(...avgABV.map(Number)) + 1 }
       }
     }
   });
